@@ -1,5 +1,5 @@
 
-from .models import List, Item
+from .models import List, Item,Teste
 from rest_framework import serializers
 
 
@@ -15,3 +15,9 @@ class ListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = List
         fields = ['id', 'name', 'owner', 'url', 'item_set']
+
+class TestSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Teste
+        fields = ['name']
+

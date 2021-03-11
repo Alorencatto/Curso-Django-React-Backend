@@ -1,7 +1,10 @@
 from rest_framework import viewsets
 from rest_framework import permissions, authentication
-from .serializers import ListSerializer, ItemSerializer
-from .models import List, Item
+from .serializers import ListSerializer, ItemSerializer,TestSerializer
+from .models import List, Item, Teste
+from rest_framework import generics
+from rest_framework.response import Response
+
 
 class ListViewSet(viewsets.ModelViewSet):
     serializer_class = ListSerializer
@@ -21,10 +24,7 @@ class ItemViewSet(viewsets.ModelViewSet):
 
 
 
+class Teste(viewsets.ModelViewSet):
+    queryset = Teste.objects.all()
+    serializer_class = TestSerializer
 
-
-# class ItemViewSet(viewsets.ModelViewSet):
-#     queryset = Item.objects.all()
-#     serializer_class = ItemSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-#     authentication_classes = [authentication.TokenAuthentication, authentication.SessionAuthentication]
